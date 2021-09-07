@@ -8,7 +8,7 @@ public class EmailValidator {
 	public static void checkValidEmail(String email){
 		
 		boolean isEmail;
-		String emailRegex = "^[a-zA-Z][.@a-zA-Z]*$";
+		String emailRegex = "^[a-zA-Z]*[@]{1}[.a-z]*$";
 		Pattern patternObject = Pattern.compile(emailRegex);
 		if (email == null) {
             isEmail = false;
@@ -26,10 +26,13 @@ public class EmailValidator {
 		
 		System.out.println("---------- Welcome To Email Validator ----------");
 		
-		String email = "abc.xyz@bridgelabz.co.in";
+		String email = "abc@bridgelabz.co.in";
 		checkValidEmail(email);
 		
 		email = ".abc@abc.com";
+		checkValidEmail(email);
+		
+		email = "abc@gmail.com.com";
 		checkValidEmail(email);
 	}
 
